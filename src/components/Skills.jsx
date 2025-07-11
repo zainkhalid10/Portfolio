@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaDatabase, FaAws, FaDocker, FaGitAlt, FaFigma, FaJava, FaLinux, FaPhp, FaLaravel } from 'react-icons/fa';
 import { SiMongodb, SiMysql, SiPostgresql, SiRedux, SiTypescript, SiKubernetes, SiJest, SiCplusplus, SiTensorflow, SiPytorch, SiOpencv, SiCypress, SiSelenium, SiTailwindcss, SiVuedotjs, SiAngular, SiNextdotjs, SiWordpress, SiFirebase, SiFlutter, SiSwift, SiKeras, SiScikitlearn, SiFastapi, SiExpress, SiGitlab, SiTerraform, SiFramer, SiAdobephotoshop, SiAdobelightroom, SiCanva, SiInvision, SiOpenai } from 'react-icons/si';
 import { FaVideo } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const skillCategories = [
   {
@@ -52,6 +53,17 @@ const awards = [
 
 export default function Skills({ isDark }) {
   const [activeTab, setActiveTab] = useState('Skills');
+  const ref = useRef();
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    if (activeTab !== 'Skills') return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [activeTab]);
   return (
     <section id="skills" className="py-16">
       <div className="max-w-5xl mx-auto px-4">
@@ -69,37 +81,45 @@ export default function Skills({ isDark }) {
         </div>
         {/* Skills grid */}
         {activeTab === 'Skills' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skillCategories.map(cat => (
-              <div key={cat.label}>
+          <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {skillCategories.map((cat, i) => (
+              <motion.div
+                key={cat.label}
+                initial={{
+                  opacity: 0,
+                  x: inView ? (i % 2 === 0 ? '-100vw' : '100vw') : 0
+                }}
+                animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: (i % 2 === 0 ? '-100vw' : '100vw') }}
+                transition={{ duration: 0.8, type: 'spring', bounce: 0.18, delay: inView ? i * 0.08 : 0 }}
+              >
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="font-medium text-blue-100 text-base md:text-lg">{cat.label}</span>
+                  <span className={`font-medium text-base md:text-lg ${isDark ? 'text-blue-100' : 'text-blue-700'}`}>{cat.label}</span>
                   <span className="text-blue-400">-</span>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {cat.skills.map((Icon, idx) => (
                     <span
                       key={idx}
-                      className="text-2xl md:text-3xl text-blue-200 hover:text-blue-400 transition-colors duration-200 hover:scale-125 cursor-pointer drop-shadow-lg"
+                      className={`text-2xl md:text-3xl ${isDark ? 'text-blue-200 hover:text-blue-400' : 'text-blue-700 hover:text-purple-600'} transition-colors duration-200 hover:scale-125 cursor-pointer drop-shadow-lg`}
                       tabIndex={0}
                     >
                       {typeof Icon === 'object' && Icon.type === 'img' ? (
                         <img src={Icon.src} alt={Icon.alt} className="w-8 h-8 md:w-12 md:h-12 object-contain inline" />
                       ) : (
-                        <Icon />
+                      <Icon />
                       )}
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         )}
         {/* Awards tab content */}
         {activeTab === 'Awards' && (
           <div className="max-w-3xl mx-auto px-4 py-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-300">Honors & Awards</h2>
-            <ul className="list-disc list-inside text-lg space-y-2 text-blue-100">
+            <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Honors & Awards</h2>
+            <ul className={`list-disc list-inside text-lg space-y-2 ${isDark ? 'text-blue-100' : 'text-gray-700'}`}>
               {awards.map((award, idx) => (
                 <li key={idx}>{award}</li>
               ))}
