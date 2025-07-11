@@ -85,18 +85,15 @@ export default function Hero({ isDark, toggleDark }) {
             animate={{ scale: [1, 1.08, 1], opacity: [0.8, 1, 0.8] }}
             transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
           />
-          <div className="w-200 h-150 md:w-[20rem] md:h-[32rem] rounded-full overflow-hidden flex items-center justify-center relative z-10 group">
-            <video
-              src="Public/Video.webm"
-              autoPlay
-              loop
-              muted
-              playsInline
-              alt="Muhammad Zain Character"
-              className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-              style={{ background: 'transparent' }}
-            />
-          </div>
+          <div className="w-[20rem] h-[32rem] rounded-full overflow-hidden flex items-center justify-center relative z-10 group">
+  <img
+    src="/Video.gif"
+    alt="Muhammad Zain Character"
+    className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+    style={{ background: 'transparent' }}
+  />
+</div>
+
         </motion.div>
       </div>
       {/* Scroll to explore */}
