@@ -15,7 +15,6 @@ const navLinks = [
   { icon: <FaCode />, to: '#skills', label: 'Skills' },
   { icon: <FaProjectDiagram />, to: '#projects', label: 'Projects' },
   { icon: <FaCertificate />, to: '#certifications', label: 'Certifications' },
-  { icon: <FaAward />, to: '#awards', label: 'Awards' },
   { icon: <FaPhone />, to: '#contact', label: 'Contact' },
 ];
 

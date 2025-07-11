@@ -9,6 +9,21 @@ import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import WelcomeScreen from './components/WelcomeScreen';
 import { useRef } from 'react';
+import { Analytics } from '@vercel/analytics/next';
+
+export function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head>
+        <title>Next.js</title>
+      </head>
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
+}
 
 export default function App() {
   const [isDark, setIsDark] = useState(true);
