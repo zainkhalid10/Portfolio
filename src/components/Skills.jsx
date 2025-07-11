@@ -46,7 +46,7 @@ const skillCategories = [
 const tabs = ['Skills', 'Awards', 'Experience'];
 
 const awards = [
-  'Runner up Coin and Stamp (World Space Week)',
+  'Runner up Coin and Stamp Designing (World Space Week)',
   'Google watch and webcam privacy cover (Google I/O Islamabad)',
 ];
 
