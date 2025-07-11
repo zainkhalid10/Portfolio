@@ -28,9 +28,9 @@ const skillCategories = [
   {
     label: 'Video Creation',
     skills: [
-      { type: 'img', src: '/Public/pp.png', alt: 'Premiere Pro' },
-      { type: 'img', src: '/Public/Davinci.png', alt: 'DaVinci Resolve' },
-      { type: 'img', src: '/Public/cc.png', alt: 'Cap CutR' },
+      { type: 'img', src: '/pp.png', alt: 'Premiere Pro' },
+      { type: 'img', src: '/Davinci.png', alt: 'DaVinci Resolve' },
+      { type: 'img', src: '/cc.png', alt: 'Cap CutR' },
     ],
   },
   {
@@ -43,11 +43,15 @@ const skillCategories = [
   },
 ];
 
-const tabs = ['Skills', 'Awards', 'Experience', 'Credentials'];
+const tabs = ['Skills', 'Awards', 'Experience'];
 
 const awards = [
-  'Runner up Graphic Designing (World Space Week)',
-  'Volunteer (Nascon Got Talent, Fast Adventure Society, Takhleeq Society)',
+  'Runner up Coin and Stamp (World Space Week)',
+  'Google watch and webcam privacy cover (Google I/O Islamabad)',
+];
+
+const experience = [
+  'Volunteer Team Media (Nascon Got Talent, Fast Adventure Society, Takhleeq Society)',
   'Head Team Media (Fast Adventure Society, Takhleeq Society)',
 ];
 
@@ -126,9 +130,17 @@ export default function Skills({ isDark }) {
             </ul>
           </div>
         )}
-        {/* Placeholder for Experience and Credentials tabs only */}
-        {(activeTab === 'Experience' || activeTab === 'Credentials') && (
-          <div className="text-blue-200 py-12 text-center text-lg opacity-60">Coming soon...</div>
+        {/* Placeholder for Experience  */}
+        {(activeTab === 'Experience' ) && (
+          <div className="max-w-3xl mx-auto px-4 py-8">
+            <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Experience</h2>
+            <ul className={`list-disc list-inside text-lg space-y-2 ${isDark ? 'text-blue-100' : 'text-gray-700'}`}>
+              {experience.map((experience, idx) => (
+                <li key={idx}>{experience}</li>
+              ))}
+            </ul>
+          </div>
+        )
         )}
       </div>
     </section>
