@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import WelcomeScreen from './components/WelcomeScreen';
 import { useRef } from 'react';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 export function RootLayout({ children }) {
   return (
