@@ -141,7 +141,7 @@ export default function Skills({ isDark }) {
             </ul>
           </div>
         )}
-        )}
+      
       </div>
     </section>
   );
