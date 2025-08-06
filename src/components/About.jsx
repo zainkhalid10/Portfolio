@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-function useTypewriter(text, inView, speed = 8) {
+function useTypewriter(text, inView, speed = 10) {
   const [displayed, setDisplayed] = useState('');
   useEffect(() => {
     if (!inView) return;
