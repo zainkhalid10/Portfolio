@@ -27,7 +27,10 @@ export default function About({ isDark }) {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
-  const typeText = `Highly motivated final-year Computer Science student at FAST NUCES with a strong background in software development, data structures, and algorithms.\n\nProficient in Python, Java, and C++, with experience in both front-end and back-end development. Seeking to leverage technical expertise and academic knowledge to contribute to innovative software solutions in a dynamic environment.\n\nIslamabad, 47080 | +923030603432 | of.mzain@gmail.com\n\nMuhammad Zain`;
+  const typeText = `I’m a highly motivated final-year Computer Science student at FAST NUCES with a strong foundation in full-stack development and a passion for creating seamless digital experiences. Proficient in multiple programming languages including Python, Java, C++, and JavaScript, I bring hands-on experience in both front-end and back-end development, as well as database integration.\n\nI specialize in building responsive user interfaces using React, Tailwind CSS, and Flutter, and have developed scalable backend solutions with Flutter, Node.js, Express, and Django. My experience also includes working with modern databases such as MongoDB, MySQL, and PostgreSQL, enabling me to deliver complete, end-to-end software solutions.
+
+With a solid grasp of data structures, algorithms, and software engineering principles, I thrive in fast-paced, collaborative environments. I'm now looking to apply my skills and creativity to innovative projects that push boundaries and drive real impact.
+\n\nIslamabad, 47080 | +923030603432 | of.mzain@gmail.com\n\nMuhammad Zain`;
   const typed = useTypewriter(typeText, inView, 8);
   // Split the typed text into paragraphs for rendering
   const [p1, p2, p3, p4] = typed.split('\n');
