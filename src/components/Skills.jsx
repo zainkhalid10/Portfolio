@@ -53,6 +53,9 @@ const awards = [
 const experience = [
   'Volunteer Team Media (Nascon Got Talent, Fast Adventure Society, Takhleeq Society)',
   'Head Team Media (Fast Adventure Society, Takhleeq Society)',
+  'Employee at StratifyOne (UK) - Jul 2025 - Sep 2025',
+  'Content Manager at American Darling (US) - Oct 2025 - Nov 2026',
+  'Campus Ambassador Teen Musafir - Oct 2025 to present',
 ];
 
 export default function Skills({ isDark }) {

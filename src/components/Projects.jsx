@@ -32,7 +32,24 @@ const projects = [
     tech: ['MediaPipe', 'OpenCV', 'Python'],
     link: 'https://github.com/zainkhalid10/Computer_Vision',
   },
-  // Add more from CV if needed
+  {
+    title: 'Neuro-Crypt',
+    description: 'Behavioral cryptocurrency analytics platform that combines psychology, sentiment analysis, and machine learning to support crypto trading decisions. Provides real-time market data, psychological bias detection, sentiment analysis, ML forecasting, and an investment simulator.',
+    tech: ['TypeScript', 'Machine Learning', 'Sentiment Analysis', 'Crypto Analytics'],
+    link: 'https://github.com/zainkhalid10/Neuro-Crypt',
+  },
+  {
+    title: 'Secure File Storage System with RBAC',
+    description: 'A Flask-based secure file storage system with Role-Based Access Control (RBAC), AES-256 file encryption, RSA key exchange, user authentication, and HMAC-SHA256 audit logging. Designed for secure file management with proper access controls.',
+    tech: ['Flask', 'Python', 'AES-256', 'RSA', 'RBAC', 'Security'],
+    link: 'https://github.com/zainkhalid10/Secure-File-Storage-System-with-RBAC',
+  },
+  {
+    title: 'Tetris Game',
+    description: 'Classic Tetris game implementation with basic functionalities. Built using C++ with game logic, scoring system, and interactive gameplay.',
+    tech: ['C++', 'Game Development', 'SFML'],
+    link: 'https://github.com/zainkhalid10/Tetris-Game',
+  },
 ];
 
 const instagramAccounts = [
