@@ -4,6 +4,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Education from './components/Education';
+import WorkExperience from './components/WorkExperience';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
@@ -60,6 +61,7 @@ export default function App() {
         <Skills isDark={isDark} />
         <Projects isDark={isDark} />
         <Education isDark={isDark} />
+        <WorkExperience isDark={isDark} />
         <Certifications isDark={isDark} />
         <Contact isDark={isDark} />
       </main>

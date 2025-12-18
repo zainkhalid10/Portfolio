@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaMoon, FaRegMoon, FaHome, FaUser, FaCode, FaProjectDiagram, FaCertificate, FaAward, FaPhone, FaPalette, FaFilm } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaMoon, FaRegMoon, FaHome, FaUser, FaCode, FaProjectDiagram, FaCertificate, FaAward, FaPhone, FaPalette, FaFilm, FaBriefcase } from 'react-icons/fa';
 
 const socialLinks = [
   { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/muhammad-zain-a0313630b', label: 'LinkedIn' },
@@ -14,6 +14,7 @@ const navLinks = [
   { icon: <FaUser />, to: '#about', label: 'About' },
   { icon: <FaCode />, to: '#skills', label: 'Skills' },
   { icon: <FaProjectDiagram />, to: '#projects', label: 'Projects' },
+  { icon: <FaBriefcase />, to: '#work-experience', label: 'Work Experience' },
   { icon: <FaCertificate />, to: '#certifications', label: 'Certifications' },
   { icon: <FaPhone />, to: '#contact', label: 'Contact' },
 ];

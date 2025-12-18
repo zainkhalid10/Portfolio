@@ -3,6 +3,24 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
   {
+    title: 'FlowMind',
+    description: 'AI-powered platform designed to create personalized daily routines based on user inputs like MBTI personality types, energy levels, and goals. An intelligent workflow management system that helps optimize productivity and mental flow.',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'AI/ML', 'React'],
+    link: 'https://github.com/zainkhalid10/FlowMind',
+  },
+  {
+    title: 'Neuro-Crypt',
+    description: 'Behavioral cryptocurrency analytics platform that combines psychology, sentiment analysis, and machine learning to support crypto trading decisions. Provides real-time market data, psychological bias detection, sentiment analysis, ML forecasting, and an investment simulator.',
+    tech: ['TypeScript', 'Machine Learning', 'Sentiment Analysis', 'Crypto Analytics'],
+    link: 'https://github.com/zainkhalid10/Neuro-Crypt',
+  },
+  {
+    title: 'Generative Ad',
+    description: 'AI-powered advertisement generation platform that automatically creates compelling ad content. Uses advanced machine learning models to generate creative ad variations, optimize targeting, and enhance marketing campaign effectiveness.',
+    tech: ['AI/ML', 'Generative AI', 'Python', 'Deep Learning', 'Marketing'],
+    link: 'https://github.com/zainkhalid10/Generative-Ad',
+  },
+  {
     title: 'Theft-Detection',
     description: 'Real-time Video Theft Detection using YOLOv8 and ByteTrack. Detects and tracks people in surveillance videos, identifies suspicious activities, and annotates videos with bounding boxes and alerts.',
     tech: ['YOLOv8', 'ByteTrack', 'Deep Learning', 'Python'],
@@ -31,12 +49,6 @@ const projects = [
     description: 'Real-Time Shirt Vanishing Effect Using MediaPipe and OpenCV. Parts of a person become invisible and are replaced by a background, toggled by a palm gesture.',
     tech: ['MediaPipe', 'OpenCV', 'Python'],
     link: 'https://github.com/zainkhalid10/Computer_Vision',
-  },
-  {
-    title: 'Neuro-Crypt',
-    description: 'Behavioral cryptocurrency analytics platform that combines psychology, sentiment analysis, and machine learning to support crypto trading decisions. Provides real-time market data, psychological bias detection, sentiment analysis, ML forecasting, and an investment simulator.',
-    tech: ['TypeScript', 'Machine Learning', 'Sentiment Analysis', 'Crypto Analytics'],
-    link: 'https://github.com/zainkhalid10/Neuro-Crypt',
   },
   {
     title: 'Secure File Storage System with RBAC',
