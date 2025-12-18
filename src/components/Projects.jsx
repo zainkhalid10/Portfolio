@@ -112,48 +112,95 @@ export default function Projects({ isDark }) {
         {/* Tab content */}
         {activeTab === 'Projects' && (
           <>
-            <div className="flex flex-row items-center justify-center min-h-[28rem] relative w-full max-w-7xl mx-auto">
-              {/* Peek previous card (left) */}
-              <div
-                className={`flex flex-col items-center justify-center bg-opacity-60 pointer-events-none rounded-xl shadow-lg mr-6 overflow-hidden ${isDark ? 'bg-blue-900/30 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-700'}`}
-                style={{ width: '15rem', height: '18rem', minWidth: '15rem', minHeight: '18rem', maxWidth: '15rem', maxHeight: '18rem' }}
-              >
-                <h3 className={`text-lg font-bold mb-1 text-center w-full ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[prevIdx].title}</h3>
+            <div className="relative w-full max-w-6xl mx-auto mb-8">
+              {/* Main card container */}
+              <div className="relative flex items-center justify-center min-h-[28rem]">
+                {/* Peek previous card (left) - hidden on mobile */}
+                <div
+                  className={`hidden md:flex flex-col items-center justify-center bg-opacity-60 pointer-events-none rounded-xl shadow-lg mr-4 overflow-hidden ${isDark ? 'bg-blue-900/30 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-700'}`}
+                  style={{ width: '12rem', height: '16rem', minWidth: '12rem', minHeight: '16rem', maxWidth: '12rem', maxHeight: '16rem' }}
+                >
+                  <h3 className={`text-base font-bold mb-1 text-center w-full px-2 ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[prevIdx].title}</h3>
+                </div>
+                
+                {/* Main card */}
+                <a 
+                  href={projects[currentIdx].link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`flex flex-col items-center justify-center rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${isDark ? 'bg-blue-900/60 hover:bg-blue-900/80 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 hover:from-purple-100 hover:to-blue-100 text-gray-700'}`}
+                  style={{ width: '100%', maxWidth: '42rem', minHeight: '24rem', wordBreak: 'break-word', padding: '2.5rem 3rem' }}
+                >
+                  <h3 className={`text-2xl md:text-3xl font-bold mb-4 text-center w-full ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[currentIdx].title}</h3>
+                  <p className="mb-6 text-base md:text-lg break-words whitespace-pre-line w-full text-center leading-relaxed">{projects[currentIdx].description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6 justify-center w-full">
+                    {projects[currentIdx].tech.map(t => (
+                      <span key={t} className={`${isDark ? 'bg-blue-950/60 text-blue-200' : 'bg-white/80 text-blue-700'} px-3 py-1.5 rounded-full text-sm font-semibold shadow-sm`}>{t}</span>
+                    ))}
+                  </div>
+                  <span className={`text-base font-semibold ${isDark ? 'text-blue-300 hover:text-blue-400' : 'text-blue-600 hover:text-purple-600'} transition-colors flex items-center gap-2`}>
+                    View on GitHub
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </span>
+                </a>
+                
+                {/* Peek next card (right) - hidden on mobile */}
+                <div
+                  className={`hidden md:flex flex-col items-center justify-center bg-opacity-60 pointer-events-none rounded-xl shadow-lg ml-4 overflow-hidden ${isDark ? 'bg-blue-900/30 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-700'}`}
+                  style={{ width: '12rem', height: '16rem', minWidth: '12rem', minHeight: '16rem', maxWidth: '12rem', maxHeight: '16rem' }}
+                >
+                  <h3 className={`text-base font-bold mb-1 text-center w-full px-2 ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[nextIdx].title}</h3>
+                </div>
               </div>
-              {/* Main card (fixed size, no animation) */}
-              <div className={`flex flex-col items-center justify-center rounded-2xl shadow-2xl overflow-hidden ${isDark ? 'bg-blue-900/60 hover:bg-blue-900/80 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 hover:from-purple-100 hover:to-blue-100 text-gray-700'}`}
-                style={{ width: '48rem', height: '22rem', minWidth: '48rem', minHeight: '22rem', maxWidth: '48rem', maxHeight: '22rem', margin: '0 0.5rem', wordBreak: 'break-word', padding: '3rem 4rem' }}
-              >
-                <h3 className={`text-2xl font-bold mb-5 text-center w-full ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[currentIdx].title}</h3>
-                <p className="mb-6 text-base md:text-lg break-words whitespace-pre-line w-full text-center" style={{maxWidth:'90%'}}>{projects[currentIdx].description}</p>
-                <div className="flex flex-wrap gap-2 mb-6 justify-center w-full">
-                  {projects[currentIdx].tech.map(t => (
-                    <span key={t} className={`${isDark ? 'bg-blue-950/60 text-blue-200' : 'bg-white/80 text-blue-700'} px-3 py-1 rounded text-sm font-semibold shadow-sm`}>{t}</span>
+
+              {/* Navigation controls - modern design */}
+              <div className="flex items-center justify-center gap-4 mt-6">
+                {/* Previous button */}
+                <button 
+                  onClick={handlePrev} 
+                  aria-label="Previous project" 
+                  className={`group flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 ${isDark ? 'bg-blue-800/80 hover:bg-blue-700 text-blue-200 hover:text-white' : 'bg-white/90 hover:bg-purple-200 text-blue-700 hover:text-purple-700'}`}
+                >
+                  <svg className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* Dot indicators */}
+                <div className="flex items-center gap-2 px-4">
+                  {projects.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentIdx(idx)}
+                      aria-label={`Go to project ${idx + 1}`}
+                      className={`transition-all duration-200 rounded-full ${
+                        idx === currentIdx
+                          ? `${isDark ? 'bg-blue-400' : 'bg-purple-600'} w-3 h-3`
+                          : `${isDark ? 'bg-blue-400/40 hover:bg-blue-400/60' : 'bg-purple-400/40 hover:bg-purple-400/60'} w-2 h-2`
+                      }`}
+                    />
                   ))}
                 </div>
-                <span className={`text-base underline ${isDark ? 'text-blue-300' : 'text-blue-600'}`}>View on GitHub</span>
-              </div>
-              {/* Peek next card (right) */}
-              <div
-                className={`flex flex-col items-center justify-center bg-opacity-60 pointer-events-none rounded-xl shadow-lg ml-6 overflow-hidden ${isDark ? 'bg-blue-900/30 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-700'}`}
-                style={{ width: '15rem', height: '18rem', minWidth: '15rem', minHeight: '18rem', maxWidth: '15rem', maxHeight: '18rem' }}
-              >
-                <h3 className={`text-lg font-bold mb-1 text-center w-full ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[nextIdx].title}</h3>
-              </div>
-              {/* Arrows */}
-              <div className="absolute right-[-5.5rem] top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20">
-                <button onClick={handlePrev} aria-label="Previous project" className={`rounded-full p-3 shadow-lg ${isDark ? 'bg-blue-900/80 hover:bg-blue-700 text-blue-200' : 'bg-white/90 hover:bg-purple-200 text-blue-700'} transition-all`}>
-                  <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 15l4-4 4 4"/></svg>
-                </button>
-                <button onClick={handleNext} aria-label="Next project" className={`rounded-full p-3 shadow-lg ${isDark ? 'bg-blue-900/80 hover:bg-blue-700 text-blue-200' : 'bg-white/90 hover:bg-purple-200 text-blue-700'} transition-all`}>
-                  <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M16 9l-4 4-4-4"/></svg>
+
+                {/* Next button */}
+                <button 
+                  onClick={handleNext} 
+                  aria-label="Next project" 
+                  className={`group flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 ${isDark ? 'bg-blue-800/80 hover:bg-blue-700 text-blue-200 hover:text-white' : 'bg-white/90 hover:bg-purple-200 text-blue-700 hover:text-purple-700'}`}
+                >
+                  <svg className="w-5 h-5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               </div>
-              {/* Project count indicator */}
-              <div className="absolute left-0 bottom-0 pl-2 text-xs text-blue-400 opacity-70 select-none z-20">
-                {currentIdx + 1} / {projects.length}
+
+              {/* Project counter */}
+              <div className={`text-center mt-4 text-sm ${isDark ? 'text-blue-300/70' : 'text-blue-600/70'}`}>
+                {currentIdx + 1} of {projects.length}
               </div>
-        </div>
+            </div>
         <div className="text-center mt-8">
           <a href="https://github.com/zainkhalid10" target="_blank" rel="noopener noreferrer" className={`font-semibold underline transition-colors ${isDark ? 'text-blue-300 hover:text-blue-400' : 'text-blue-700 hover:text-purple-600'}`}>See more on GitHub</a>
         </div>

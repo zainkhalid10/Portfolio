@@ -23,7 +23,7 @@ const education = [
 
 export default function Education({ isDark }) {
   return (
-    <section id="education" className={`py-16 ${isDark ? '' : ''}`}>
+    <section id="education" className={`py-16 ${isDark ? 'bg-[#1e293b]/80' : 'bg-white/70'}`}>
       <div className="max-w-3xl mx-auto px-4">
         <h2 className={`text-2xl md:text-3xl font-bold mb-8 ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Education</h2>
         <ol className="relative border-l-4 border-blue-200">
