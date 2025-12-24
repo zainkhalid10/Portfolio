@@ -27,7 +27,7 @@ export function RootLayout({ children }) {
 }
 
 export default function App() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const toggleDark = () => setIsDark(d => !d);
