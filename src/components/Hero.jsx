@@ -23,7 +23,7 @@ const navLinks = [
 
 export default function Hero({ isDark, toggleDark }) {
   return (
-    <section id="hero" className={`relative min-h-[90vh] flex flex-col justify-center transition-colors duration-300 overflow-x-hidden ${isDark ? 'bg-gradient-to-br from-[#0f172a] to-[#1e293b]' : 'bg-gradient-to-br from-blue-50 to-purple-100'}`}>
+    <section id="hero" className={`relative min-h-[90vh] flex flex-col justify-center transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-[#0f172a] to-[#1e293b]' : 'bg-gradient-to-br from-blue-50 to-purple-100'}` + ' overflow-hidden'}>
       {/* Top nav icons */}
       <nav className={`fixed left-1/2 top-0 -translate-x-1/2 z-40 flex flex-row gap-2 sm:gap-4 md:gap-6 ${isDark ? 'bg-[#1e293b]/80 border-blue-900/30' : 'bg-white/80 border-blue-200'} rounded-xl sm:rounded-2xl px-2 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg border overflow-x-auto scrollbar-hide`}>
         {navLinks.map((n, i) => (
@@ -39,7 +39,7 @@ export default function Hero({ isDark, toggleDark }) {
       </nav>
       {/* Animated background shapes */}
       <motion.div
-        className={`absolute right-0 top-1/4 w-[40vw] max-w-[600px] h-[40vw] max-h-[600px] ${isDark ? 'bg-blue-900/20' : 'bg-purple-200/30'} rounded-full blur-3xl overflow-hidden`}
+        className={`absolute right-0 top-1/4 w-[40vw] h-[40vw] ${isDark ? 'bg-blue-900/20' : 'bg-purple-200/30'} rounded-full blur-3xl`}
         animate={{ scale: [1, 1.1, 1], opacity: [0.7, 1, 0.7] }}
         transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }}
         style={{ zIndex: 1 }}

@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
 body {
   font-family: 'Inter', 'IBM Plex Sans', 'Arial', sans-serif;
 }

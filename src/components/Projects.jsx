@@ -91,7 +91,7 @@ export default function Projects({ isDark }) {
   const prevIdx = (currentIdx - 1 + projects.length) % projects.length;
   const nextIdx = (currentIdx + 1) % projects.length;
   return (
-    <section id="projects" className={`py-16 overflow-x-hidden ${isDark ? 'bg-[#1e293b]/80' : 'bg-white/70'}`}>
+    <section id="projects" className={`py-16 ${isDark ? 'bg-[#1e293b]/80' : 'bg-white/70'}`}>
       <div className="max-w-5xl mx-auto px-4">
         <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Projects</h2>
         {/* Tabs */}
@@ -112,12 +112,12 @@ export default function Projects({ isDark }) {
         {/* Tab content */}
         {activeTab === 'Projects' && (
           <>
-            <div className="relative w-full max-w-6xl mx-auto mb-8 overflow-hidden">
+            <div className="relative w-full max-w-6xl mx-auto mb-8">
               {/* Main card container */}
-              <div className="relative flex items-center justify-center min-h-[28rem] px-4 md:px-0">
+              <div className="relative flex items-center justify-center min-h-[28rem]">
                 {/* Peek previous card (left) - hidden on mobile */}
                 <div
-                  className={`hidden lg:flex flex-col items-center justify-center bg-opacity-60 pointer-events-none rounded-xl shadow-lg mr-4 overflow-hidden flex-shrink-0 ${isDark ? 'bg-blue-900/30 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-700'}`}
+                  className={`hidden md:flex flex-col items-center justify-center bg-opacity-60 pointer-events-none rounded-xl shadow-lg mr-4 overflow-hidden ${isDark ? 'bg-blue-900/30 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-700'}`}
                   style={{ width: '12rem', height: '16rem', minWidth: '12rem', minHeight: '16rem', maxWidth: '12rem', maxHeight: '16rem' }}
                 >
                   <h3 className={`text-base font-bold mb-1 text-center w-full px-2 ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[prevIdx].title}</h3>
@@ -128,7 +128,7 @@ export default function Projects({ isDark }) {
                   href={projects[currentIdx].link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className={`flex flex-col items-center justify-center rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] p-6 sm:p-8 md:p-10 flex-shrink-0 ${isDark ? 'bg-blue-900/60 hover:bg-blue-900/80 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 hover:from-purple-100 hover:to-blue-100 text-gray-700'}`}
+                  className={`flex flex-col items-center justify-center rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] p-6 sm:p-8 md:p-10 ${isDark ? 'bg-blue-900/60 hover:bg-blue-900/80 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 hover:from-purple-100 hover:to-blue-100 text-gray-700'}`}
                   style={{ width: '100%', maxWidth: '42rem', minHeight: '20rem', wordBreak: 'break-word' }}
                 >
                   <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-center w-full ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[currentIdx].title}</h3>
@@ -148,7 +148,7 @@ export default function Projects({ isDark }) {
                 
                 {/* Peek next card (right) - hidden on mobile */}
                 <div
-                  className={`hidden lg:flex flex-col items-center justify-center bg-opacity-60 pointer-events-none rounded-xl shadow-lg ml-4 overflow-hidden flex-shrink-0 ${isDark ? 'bg-blue-900/30 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-700'}`}
+                  className={`hidden md:flex flex-col items-center justify-center bg-opacity-60 pointer-events-none rounded-xl shadow-lg ml-4 overflow-hidden ${isDark ? 'bg-blue-900/30 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-700'}`}
                   style={{ width: '12rem', height: '16rem', minWidth: '12rem', minHeight: '16rem', maxWidth: '12rem', maxHeight: '16rem' }}
                 >
                   <h3 className={`text-base font-bold mb-1 text-center w-full px-2 ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[nextIdx].title}</h3>

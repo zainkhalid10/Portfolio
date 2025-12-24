@@ -51,7 +51,7 @@ export default function App() {
 
   return (
     <div className={
-      `min-h-screen flex flex-col transition-colors duration-300 overflow-x-hidden ` +
+      `min-h-screen flex flex-col transition-colors duration-300 ` +
       (isDark ? 'bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white' : 'bg-gradient-to-br from-blue-50 to-purple-100 text-gray-900')
     }>
       <Navbar />
