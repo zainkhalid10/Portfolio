@@ -32,8 +32,8 @@ export default function Certifications({ isDark }) {
   return (
     <section id="certifications" className={`py-16 ${isDark ? 'bg-[#1e293b]/80' : 'bg-white/70'}`}>
       <div className="max-w-5xl mx-auto px-4">
-        <h2 className={`text-2xl md:text-3xl font-bold mb-8 ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Certifications</h2>
-        <div ref={ref} className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Certifications</h2>
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {certifications.map((cert, idx) => {
             // 0: left, 1: center, 2: right (for 3 columns)
             let initial = { opacity: 0, y: 60 };
@@ -45,10 +45,10 @@ export default function Certifications({ isDark }) {
                 initial={initial}
                 animate={inView ? { opacity: 1, x: 0, y: 0 } : initial}
                 transition={{ duration: 0.7, type: 'spring', bounce: 0.18, delay: inView ? idx * 0.08 : 0 }}
-                className={`rounded-xl shadow p-5 flex flex-col items-start hover:scale-105 hover:shadow-2xl transition-all duration-300 group relative ${isDark ? 'bg-blue-900/40 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-800'}`}
+                className={`rounded-xl shadow p-4 sm:p-5 flex flex-col items-start hover:scale-105 hover:shadow-2xl transition-all duration-300 group relative ${isDark ? 'bg-blue-900/40 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 text-gray-800'}`}
               >
-                <div className={`font-semibold mb-1 group-hover:text-purple-300 transition-colors duration-200 ${isDark ? 'text-blue-200' : 'text-blue-800'}`}>{cert.name}</div>
-                <div className={`text-sm mb-1 ${isDark ? 'text-blue-300' : 'text-gray-700'}`}>{cert.org}</div>
+                <div className={`text-sm sm:text-base font-semibold mb-1 group-hover:text-purple-300 transition-colors duration-200 ${isDark ? 'text-blue-200' : 'text-blue-800'}`}>{cert.name}</div>
+                <div className={`text-xs sm:text-sm mb-1 ${isDark ? 'text-blue-300' : 'text-gray-700'}`}>{cert.org}</div>
                 {cert.code && (
                   <div className="flex items-center gap-2 mt-2">
                     <span className={`text-xs ${isDark ? 'text-blue-400' : 'text-gray-500'}`}>Code: {cert.code}</span>

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-function useTypewriter(text, inView, speed = 10) {
+function useTypewriter(text, inView, speed = 15) {
   const [displayed, setDisplayed] = useState('');
   useEffect(() => {
     if (!inView) return;
@@ -38,13 +38,13 @@ With a solid grasp of data structures, algorithms, and software engineering prin
     <section id="about" className={`py-16 ${isDark ? 'bg-[#1e293b]/80' : 'bg-white/70'}` + ' font-[\'Fredoka\'],[\'Baloo 2\'],cursive'}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Baloo+2:wght@400;700&display=swap');`}</style>
       <div className="max-w-3xl mx-auto px-4">
-        <h2 className={`text-3xl md:text-5xl font-bold mb-6 text-center ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>About Me</h2>
-        <div ref={ref} className={`${isDark ? 'bg-[#0f172a] text-white' : 'bg-white text-gray-800'} rounded-xl shadow-lg p-8 md:p-14` + ' font-[\'Fredoka\'],[\'Baloo 2\'],cursive'}>
-          <p className="text-2xl md:text-3xl mb-4 min-h-[3.5rem]">{p1 || ''}</p>
-          <p className="text-xl md:text-2xl mb-4">{p2 || ''}</p>
-          <p className={`text-lg md:text-xl ${isDark ? 'text-blue-200' : 'text-gray-500'} mb-2`}>{p3 || ''}</p>
-          <p className={`text-lg md:text-xl mt-2 font-bold ${isDark ? 'text-blue-200' : 'text-gray-500'}`}>{p4 || ''}</p>
-          {typed.length < typeText.length && <span className="animate-pulse text-2xl md:text-3xl">|</span>}
+        <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-center ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>About Me</h2>
+        <div ref={ref} className={`${isDark ? 'bg-[#0f172a] text-white' : 'bg-white text-gray-800'} rounded-xl shadow-lg p-6 sm:p-8 md:p-12 lg:p-14` + ' font-[\'Fredoka\'],[\'Baloo 2\'],cursive'}>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-3 sm:mb-4 min-h-[2.5rem] sm:min-h-[3.5rem]">{p1 || ''}</p>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-3 sm:mb-4">{p2 || ''}</p>
+          <p className={`text-sm sm:text-base md:text-lg lg:text-xl ${isDark ? 'text-blue-200' : 'text-gray-500'} mb-2`}>{p3 || ''}</p>
+          <p className={`text-sm sm:text-base md:text-lg lg:text-xl mt-2 font-bold ${isDark ? 'text-blue-200' : 'text-gray-500'}`}>{p4 || ''}</p>
+          {typed.length < typeText.length && <span className="animate-pulse text-lg sm:text-xl md:text-2xl lg:text-3xl">|</span>}
         </div>
       </div>
     </section>

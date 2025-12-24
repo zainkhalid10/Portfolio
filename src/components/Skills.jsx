@@ -73,12 +73,12 @@ export default function Skills({ isDark }) {
     <section id="skills" className="py-16">
       <div className="max-w-5xl mx-auto px-4">
         {/* Tab bar */}
-        <div className="flex gap-8 border-b border-blue-900/30 mb-8">
+        <div className="flex gap-4 sm:gap-6 md:gap-8 border-b border-blue-900/30 mb-6 sm:mb-8 overflow-x-auto scrollbar-hide">
           {tabs.map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`pb-2 px-2 text-lg font-semibold transition-colors duration-200 border-b-2 ${activeTab === tab ? 'border-blue-400 text-blue-400' : 'border-transparent text-blue-200 hover:text-blue-400'}`}
+              className={`pb-2 px-2 sm:px-3 text-base sm:text-lg font-semibold transition-colors duration-200 border-b-2 whitespace-nowrap flex-shrink-0 ${activeTab === tab ? 'border-blue-400 text-blue-400' : 'border-transparent text-blue-200 hover:text-blue-400'}`}
             >
               {tab}
             </button>

@@ -93,17 +93,17 @@ export default function Projects({ isDark }) {
   return (
     <section id="projects" className={`py-16 ${isDark ? 'bg-[#1e293b]/80' : 'bg-white/70'}`}>
       <div className="max-w-5xl mx-auto px-4">
-        <h2 className={`text-2xl md:text-3xl font-bold mb-8 ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Projects</h2>
+        <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Projects</h2>
         {/* Tabs */}
-        <div className="flex gap-4 mb-8">
+        <div className="flex gap-2 sm:gap-4 mb-6 sm:mb-8">
           <button
-            className={`px-4 py-2 rounded-t-lg font-semibold transition-colors duration-200 border-b-2 ${activeTab === 'Projects' ? (isDark ? 'border-blue-400 text-blue-200' : 'border-purple-600 text-purple-700') : (isDark ? 'border-transparent text-blue-200/60' : 'border-transparent text-blue-700/60')}`}
+            className={`px-3 sm:px-4 py-2 rounded-t-lg text-sm sm:text-base font-semibold transition-colors duration-200 border-b-2 ${activeTab === 'Projects' ? (isDark ? 'border-blue-400 text-blue-200' : 'border-purple-600 text-purple-700') : (isDark ? 'border-transparent text-blue-200/60' : 'border-transparent text-blue-700/60')}`}
             onClick={() => setActiveTab('Projects')}
           >
             Projects
           </button>
           <button
-            className={`px-4 py-2 rounded-t-lg font-semibold transition-colors duration-200 border-b-2 ${activeTab === 'Instagram' ? (isDark ? 'border-blue-400 text-blue-200' : 'border-purple-600 text-purple-700') : (isDark ? 'border-transparent text-blue-200/60' : 'border-transparent text-blue-700/60')}`}
+            className={`px-3 sm:px-4 py-2 rounded-t-lg text-sm sm:text-base font-semibold transition-colors duration-200 border-b-2 ${activeTab === 'Instagram' ? (isDark ? 'border-blue-400 text-blue-200' : 'border-purple-600 text-purple-700') : (isDark ? 'border-transparent text-blue-200/60' : 'border-transparent text-blue-700/60')}`}
             onClick={() => setActiveTab('Instagram')}
           >
             Instagram Portfolio
@@ -128,14 +128,14 @@ export default function Projects({ isDark }) {
                   href={projects[currentIdx].link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className={`flex flex-col items-center justify-center rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${isDark ? 'bg-blue-900/60 hover:bg-blue-900/80 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 hover:from-purple-100 hover:to-blue-100 text-gray-700'}`}
-                  style={{ width: '100%', maxWidth: '42rem', minHeight: '24rem', wordBreak: 'break-word', padding: '2.5rem 3rem' }}
+                  className={`flex flex-col items-center justify-center rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] p-6 sm:p-8 md:p-10 ${isDark ? 'bg-blue-900/60 hover:bg-blue-900/80 text-blue-100' : 'bg-gradient-to-br from-blue-100 to-purple-100 hover:from-purple-100 hover:to-blue-100 text-gray-700'}`}
+                  style={{ width: '100%', maxWidth: '42rem', minHeight: '20rem', wordBreak: 'break-word' }}
                 >
-                  <h3 className={`text-2xl md:text-3xl font-bold mb-4 text-center w-full ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[currentIdx].title}</h3>
-                  <p className="mb-6 text-base md:text-lg break-words whitespace-pre-line w-full text-center leading-relaxed">{projects[currentIdx].description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6 justify-center w-full">
+                  <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-center w-full ${isDark ? 'text-blue-200' : 'text-purple-700'}`}>{projects[currentIdx].title}</h3>
+                  <p className="mb-4 sm:mb-6 text-sm sm:text-base md:text-lg break-words whitespace-pre-line w-full text-center leading-relaxed">{projects[currentIdx].description}</p>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6 justify-center w-full">
                     {projects[currentIdx].tech.map(t => (
-                      <span key={t} className={`${isDark ? 'bg-blue-950/60 text-blue-200' : 'bg-white/80 text-blue-700'} px-3 py-1.5 rounded-full text-sm font-semibold shadow-sm`}>{t}</span>
+                      <span key={t} className={`${isDark ? 'bg-blue-950/60 text-blue-200' : 'bg-white/80 text-blue-700'} px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-sm`}>{t}</span>
                     ))}
                   </div>
                   <span className={`text-base font-semibold ${isDark ? 'text-blue-300 hover:text-blue-400' : 'text-blue-600 hover:text-purple-600'} transition-colors flex items-center gap-2`}>
@@ -156,28 +156,28 @@ export default function Projects({ isDark }) {
               </div>
 
               {/* Navigation controls - modern design */}
-              <div className="flex items-center justify-center gap-4 mt-6">
+              <div className="flex items-center justify-center gap-2 sm:gap-4 mt-4 sm:mt-6 px-4">
                 {/* Previous button */}
                 <button 
                   onClick={handlePrev} 
                   aria-label="Previous project" 
-                  className={`group flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 ${isDark ? 'bg-blue-800/80 hover:bg-blue-700 text-blue-200 hover:text-white' : 'bg-white/90 hover:bg-purple-200 text-blue-700 hover:text-purple-700'}`}
+                  className={`group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 ${isDark ? 'bg-blue-800/80 hover:bg-blue-700 text-blue-200 hover:text-white' : 'bg-white/90 hover:bg-purple-200 text-blue-700 hover:text-purple-700'}`}
                 >
-                  <svg className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
 
                 {/* Dot indicators */}
-                <div className="flex items-center gap-2 px-4">
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 overflow-x-auto scrollbar-hide max-w-[calc(100vw-8rem)] sm:max-w-none">
                   {projects.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setCurrentIdx(idx)}
                       aria-label={`Go to project ${idx + 1}`}
-                      className={`transition-all duration-200 rounded-full ${
+                      className={`transition-all duration-200 rounded-full flex-shrink-0 ${
                         idx === currentIdx
-                          ? `${isDark ? 'bg-blue-400' : 'bg-purple-600'} w-3 h-3`
+                          ? `${isDark ? 'bg-blue-400' : 'bg-purple-600'} w-2.5 h-2.5 sm:w-3 sm:h-3`
                           : `${isDark ? 'bg-blue-400/40 hover:bg-blue-400/60' : 'bg-purple-400/40 hover:bg-purple-400/60'} w-2 h-2`
                       }`}
                     />
@@ -188,9 +188,9 @@ export default function Projects({ isDark }) {
                 <button 
                   onClick={handleNext} 
                   aria-label="Next project" 
-                  className={`group flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 ${isDark ? 'bg-blue-800/80 hover:bg-blue-700 text-blue-200 hover:text-white' : 'bg-white/90 hover:bg-purple-200 text-blue-700 hover:text-purple-700'}`}
+                  className={`group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 ${isDark ? 'bg-blue-800/80 hover:bg-blue-700 text-blue-200 hover:text-white' : 'bg-white/90 hover:bg-purple-200 text-blue-700 hover:text-purple-700'}`}
                 >
-                  <svg className="w-5 h-5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </button>

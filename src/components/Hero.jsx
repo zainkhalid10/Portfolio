@@ -25,13 +25,13 @@ export default function Hero({ isDark, toggleDark }) {
   return (
     <section id="hero" className={`relative min-h-[90vh] flex flex-col justify-center transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-[#0f172a] to-[#1e293b]' : 'bg-gradient-to-br from-blue-50 to-purple-100'}` + ' overflow-hidden'}>
       {/* Top nav icons */}
-      <nav className={`fixed left-1/2 top-0 -translate-x-1/2 z-40 flex flex-row gap-6 ${isDark ? 'bg-[#1e293b]/80 border-blue-900/30' : 'bg-white/80 border-blue-200'} rounded-2xl px-6 py-3 shadow-lg border`}>
+      <nav className={`fixed left-1/2 top-0 -translate-x-1/2 z-40 flex flex-row gap-2 sm:gap-4 md:gap-6 ${isDark ? 'bg-[#1e293b]/80 border-blue-900/30' : 'bg-white/80 border-blue-200'} rounded-xl sm:rounded-2xl px-2 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg border overflow-x-auto scrollbar-hide`}>
         {navLinks.map((n, i) => (
-          <div key={i} className="relative flex items-center group">
-            <a href={n.to} aria-label={n.label} className={`text-xl ${isDark ? 'text-white/70 hover:text-blue-400' : 'text-blue-900/70 hover:text-purple-600'} transition-colors duration-200 flex items-center justify-center`}>
+          <div key={i} className="relative flex items-center group flex-shrink-0">
+            <a href={n.to} aria-label={n.label} className={`text-base sm:text-lg md:text-xl ${isDark ? 'text-white/70 hover:text-blue-400' : 'text-blue-900/70 hover:text-purple-600'} transition-colors duration-200 flex items-center justify-center p-1 sm:p-2`}>
               {n.icon}
             </a>
-            <span className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 opacity-0 group-hover:opacity-100 pointer-events-none ${isDark ? 'bg-blue-900 text-white' : 'bg-white text-blue-900 border border-blue-200'} text-xs font-semibold rounded px-2 py-1 shadow-lg transition-opacity duration-200 whitespace-nowrap`}>
+            <span className={`hidden sm:block absolute left-1/2 -translate-x-1/2 top-full mt-2 opacity-0 group-hover:opacity-100 pointer-events-none ${isDark ? 'bg-blue-900 text-white' : 'bg-white text-blue-900 border border-blue-200'} text-xs font-semibold rounded px-2 py-1 shadow-lg transition-opacity duration-200 whitespace-nowrap`}>
               {n.label}
             </span>
           </div>
@@ -60,11 +60,11 @@ export default function Hero({ isDark, toggleDark }) {
             </button>
           </div>
           <p className={`text-lg md:text-xl max-w-xl mb-8 text-center md:text-left ${isDark ? 'text-white/80' : 'text-blue-900/80'}`}>Final-year Computer Science student at FAST NUCES. Passionate about software development, AI, and building innovative digital experiences. Let's turn your vision into reality.</p>
-          <div className="flex gap-4">
-            <a href="#contact" className={`px-7 py-3 ${isDark ? 'bg-blue-500 hover:bg-blue-400 text-white' : 'bg-purple-600 hover:bg-purple-500 text-white'} font-semibold rounded-full shadow-lg transition-colors duration-200 text-base flex items-center gap-2`}>
-              Start a Project <span className="text-lg">↓</span>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+            <a href="#contact" className={`px-5 sm:px-7 py-2.5 sm:py-3 ${isDark ? 'bg-blue-500 hover:bg-blue-400 text-white' : 'bg-purple-600 hover:bg-purple-500 text-white'} font-semibold rounded-full shadow-lg transition-colors duration-200 text-sm sm:text-base flex items-center justify-center gap-2`}>
+              Start a Project <span className="text-base sm:text-lg">↓</span>
             </a>
-            <a href="#projects" className={`px-7 py-3 border ${isDark ? 'border-white/30 hover:border-blue-400 text-white' : 'border-blue-200 hover:border-purple-600 text-blue-900'} font-semibold rounded-full shadow-lg transition-colors duration-200 text-base flex items-center gap-2`}>
+            <a href="#projects" className={`px-5 sm:px-7 py-2.5 sm:py-3 border ${isDark ? 'border-white/30 hover:border-blue-400 text-white' : 'border-blue-200 hover:border-purple-600 text-blue-900'} font-semibold rounded-full shadow-lg transition-colors duration-200 text-sm sm:text-base flex items-center justify-center gap-2`}>
               View Portfolio
             </a>
           </div>
@@ -85,7 +85,7 @@ export default function Hero({ isDark, toggleDark }) {
             animate={{ scale: [1, 1.08, 1], opacity: [0.8, 1, 0.8] }}
             transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
           />
-          <div className="w-[20rem] h-[32rem] rounded-full overflow-hidden flex items-center justify-center relative z-10 group">
+          <div className="w-[16rem] h-[24rem] sm:w-[18rem] sm:h-[28rem] md:w-[20rem] md:h-[32rem] rounded-full overflow-hidden flex items-center justify-center relative z-10 group">
   <img
     src="/Video.gif"
     alt="Muhammad Zain Character"
