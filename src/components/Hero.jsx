@@ -19,6 +19,8 @@ const navLinks = [
   { icon: <FaPhone />, to: '#contact', label: 'Contact' },
 ];
 
+const CV_URL = 'https://raw.githubusercontent.com/zainkhalid10/Portfolio/main/CV.pdf';
+
 // NOTE: For best effect, use a video with transparent or solid background.
 
 export default function Hero({ isDark, toggleDark }) {
@@ -64,8 +66,13 @@ export default function Hero({ isDark, toggleDark }) {
             <a href="#contact" className={`px-5 sm:px-7 py-2.5 sm:py-3 ${isDark ? 'bg-blue-500 hover:bg-blue-400 text-white' : 'bg-purple-600 hover:bg-purple-500 text-white'} font-semibold rounded-full shadow-lg transition-colors duration-200 text-sm sm:text-base flex items-center justify-center gap-2`}>
               Start a Project <span className="text-base sm:text-lg">↓</span>
             </a>
-            <a href="#projects" className={`px-5 sm:px-7 py-2.5 sm:py-3 border ${isDark ? 'border-white/30 hover:border-blue-400 text-white' : 'border-blue-200 hover:border-purple-600 text-blue-900'} font-semibold rounded-full shadow-lg transition-colors duration-200 text-sm sm:text-base flex items-center justify-center gap-2`}>
-              View Portfolio
+            <a
+              href={CV_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`px-5 sm:px-7 py-2.5 sm:py-3 border ${isDark ? 'border-white/30 hover:border-blue-400 text-white' : 'border-blue-200 hover:border-purple-600 text-blue-900'} font-semibold rounded-full shadow-lg transition-colors duration-200 text-sm sm:text-base flex items-center justify-center gap-2`}
+            >
+              View CV
             </a>
           </div>
         </div>
