@@ -61,7 +61,7 @@ export default function Hero({ isDark, toggleDark }) {
               {isDark ? <FaMoon /> : <FaRegMoon />}
             </button>
           </div>
-          <p className={`text-lg md:text-xl max-w-xl mb-8 text-center md:text-left ${isDark ? 'text-white/80' : 'text-blue-900/80'}`}>Final-year Computer Science student at FAST NUCES. Passionate about software development, AI, and building innovative digital experiences. Let's turn your vision into reality.</p>
+          <p className={`text-lg md:text-xl max-w-xl mb-8 text-center md:text-left ${isDark ? 'text-white/80' : 'text-blue-900/80'}`}>I make intelligent systems by blending my CS roots with advanced AI development.</p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
             <a href="#contact" className={`px-5 sm:px-7 py-2.5 sm:py-3 ${isDark ? 'bg-blue-500 hover:bg-blue-400 text-white' : 'bg-purple-600 hover:bg-purple-500 text-white'} font-semibold rounded-full shadow-lg transition-colors duration-200 text-sm sm:text-base flex items-center justify-center gap-2`}>
               Start a Project <span className="text-base sm:text-lg">↓</span>
